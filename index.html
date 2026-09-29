@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi primer HTML - Fabián Crisanto</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@200..700&family=Syne+Tactile&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://fav.farm/⚽">
+    <!-- Cargar la librería GSAP desde internet -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+
+    <h1>Ficha de Fabián Crisanto :D</h1> 
+
+    <div class="cuadro-foto">
+        <img src="https://picsum.photos/250" alt="Foto de perfil de Fabián">
+    </div>
+
+    <div class="habilidades">
+        <span class="badge">⚽ Fútbol</span>
+        <span class="badge">💻 Reparación PC</span>
+        <span class="badge">🔥 HTML & CSS</span>
+    </div>
+
+    <div class="cuadro-foto">
+        <img src="img/lindo-perro.webp" alt="Lindo perro de Fabián">
+    </div>
+
+    <h1 id="saludo-dinamico">¡Bienvenido a mi web!</h1>
+
+    <h2 class="txtquiensoy">¿Quién soy?</h2>
+    <p>Soy Fabián Crisanto, me gusta mucho la tecnología y soy una persona amigable, responsable y con mucha actitud. Juego en la juvenil de Ciudad de Getafe y me encantan las computadoras.</p>
+
+    <h2>Tres cosas que me gustan</h2>
+    <ul class="listacosasquemegustan" id="listacosasquemegustan">
+        <li>Jugar Fútbol ⚽</li>
+        <li>Jugar videojuegos 🎮</li>
+        <li>Reparar computadoras 🖥️</li>
+    </ul>
+
+    <h2>¿Por qué estoy aquí?</h2>
+    <p>Estoy aquí porque me gusta mucho el mundo de las computadoras y la programación. Algún día me gustaría ser una persona profesional y participar o trabajar en grandes empresas como Microsoft y otras más.</p>
+
+    <h2>Cosas que se me dan bien</h2>
+    <ol>
+        <li>Entrenar Fútbol</li>
+        <li>Cocinar comida de mi país</li>
+        <li>Superarme todos los días</li>
+    </ol>
+
+    <h2>Una página que visito mucho</h2> 
+    
+    <a href="https://www.tiktok.com/es/" target="_blank" class="btn-tiktok">Ir a TikTok</a>
+
+    <button onclick="alert('¡Hola! Gracias por visitar mi página. Espero que te guste y que tengas un buen día. :)')">Agradecimiento</button>
+    <button id="btn-like">❤️ Me gusta: <span id="contador">0</span></button>
+    <button id="btn-modo">🌙 Modo Oscuro</button>
+
+    <footer>
+        <p>© 2026 - Diseñado por Fabián Crisanto</p>
+    </footer>
+
+    <!-- javascript -->
+    <script>
+        // 1. logica del botón de Me gusta
+        let likes = 0;
+        const botonLike = document.getElementById('btn-like');
+        const textoContador = document.getElementById('contador');
+
+        botonLike.addEventListener('click', () => {
+            likes++;
+            textoContador.textContent = likes;
+        });
+
+        // 2. logica del botón de Modo Oscuro
+        const btnModo = document.getElementById('btn-modo');
+        
+        btnModo.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                btnModo.textContent = '☀️ Modo Claro';
+            } else {
+                btnModo.textContent = '🌙 Modo Oscuro';
+            }
+        });
+
+        // 3. saludo dinámico según la hora del día
+        const saludo = document.getElementById('saludo-dinamico');
+        const horaActual = new Date().getHours();
+
+        if (horaActual >= 6 && horaActual < 12) {
+            saludo.textContent = '☀️ ¡Buenos días! De Fabián Crisanto';
+        } else if (horaActual >= 12 && horaActual < 20) {
+            saludo.textContent = '🌆 ¡Buenas tardes! De Fabián Crisanto';
+        } else {
+            saludo.textContent = '🌙 ¡Buenas noches! De Fabián Crisanto';
+        }
+    </script>
+
+</body>
+</html>

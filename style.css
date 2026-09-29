@@ -1,0 +1,166 @@
+/* =================================================== */
+/* 1. ESTILOS GENERALES (PC Y MÓVIL)                    */
+/* =================================================== */
+
+body {
+    background: linear-gradient(to right, #4e4c4e, #f4f4f4);
+    text-align: center;
+    border: 2px solid rgb(0, 0, 0);
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 700px;
+    overflow-x: hidden; /* Corta cualquier elemento que intente salirse por los lados en móvil */
+}
+
+/* Textos */
+h2 {
+    color: #000000;
+    font-family: 'Anton', sans-serif;
+} 
+
+p, ol, ul {
+    color: #000000;
+    font-family: 'Oswald', system-ui, sans-serif; 
+}
+
+/* Botón TikTok */
+.btn-tiktok {
+    background-color: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* Cuadros de fotos */
+.cuadro-foto {
+    width: fit-content;
+    margin: 20px auto;
+    padding: 10px;
+    background: #ffffff;
+    border: 3px solid #000000;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cuadro-foto img {
+    display: block;
+    width: 250px;
+    border-radius: 10px;
+}
+
+/* Botones */
+button {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0;
+}
+
+.listacosasquemegustan {
+    display: flex;            
+    justify-content: center;  
+    gap: 15px;                
+    padding: 0;
+}
+
+.listacosasquemegustan li {
+    background: #000000;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.badge {
+    background-color: #000000;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    margin: 5px;
+}
+
+/* Pie de página */
+footer {
+    margin-top: 40px;
+    padding: 15px;
+    border-top: 2px solid #000000;
+    font-size: 14px;
+    color: #333333;
+}
+
+/* Modo Oscuro */
+body.dark-mode {
+    background: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode h2, 
+body.dark-mode p, 
+body.dark-mode ol, 
+body.dark-mode ul,
+body.dark-mode footer {
+    color: #ffffff;
+}
+
+/* =================================================== */
+/* 2. ADAPTACIÓN MÓVIL Y ANIMACIONES SEGURAS             */
+/* =================================================== */
+
+/* Animaciones :hover EXCLUSIVAS para PC (pantallas con ratón real) */
+@media (hover: hover) {
+    .cuadro-foto:hover {
+        transform: scale(1.05) rotate(-2deg); 
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); 
+    }
+
+    .btn-tiktok:hover {
+        color: #ffffff;
+        background-color: #ff0050;
+        transform: scale(1.1) translateY(-3px);
+        box-shadow: 0 0 15px rgba(255, 0, 80, 0.8);
+    }
+
+    button:hover {
+        background-color: #333333;
+    }
+
+    .listacosasquemegustan li:hover {
+        transform: translateY(-5px); 
+    }
+}
+
+/* Ajustes para móviles (pantallas pequeñas < 600px) */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .cuadro-foto img {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .listacosasquemegustan {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
